@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  leap-motion-prediction-ts-node-docker:
+    build:
+      target: production
+    command: node build/index.js

@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  leap-motion-prediction-ts-node-docker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+    volumes:
+      - ./src:/user/node/app/src
+      - ./nodemon.json:/user/node/app/nodemon.json
+    container_name: leap-motion-prediction-ts-node-docker
+    expose:
+      - '8080'
+    ports:
+      - '8080:8080'
+    command: npm run dev
